@@ -1,0 +1,147 @@
+/* ----------------------------- *\
+        SECCION MODAL
+\* ----------------------------- */
+
+.seccion-modal {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateY(-2000px)
+}
+
+    .capa {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        will-change: background-color;
+    }
+    .capa.activa {
+        background-color: rgba(0,0,0,.5);
+    }
+
+        .modal {
+            height: 230px;
+            width: 450px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: inset 0px -5px 5px 0px rgba(0, 0, 0, .1);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .modal-titulo {
+                color: #0f9bf6;
+                margin: 10px 0 0;
+                
+                text-transform: uppercase;
+                font-size: 1.1em;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            .modal-contenido {
+                text-align: center;
+                margin: 1em 1.5em;
+            }
+
+            .modal-boton {
+                height: 35px;
+                width: 90px;
+                margin-top: 10px;
+                cursor: pointer;
+                font-size: 0.9em;
+
+                color: white;
+                background-color: #0f9bf6;
+
+                border-radius: 25px;
+                border: none;
+            }
+
+/* ANIMACION DE ENTRADA PARA EL MODAL *//* Se asignara mediante JS */
+@keyframes modalIn {
+    0% {
+        transform: translateY(-2000px);
+    }
+    60% {
+        transform: translateY(25px);
+    }
+    75% {
+        transform: translateY(-10px);
+    }
+    90% {
+        transform: translateY(5px);
+    }
+}
+
+/* ANIMACION DE SALIDA PARA EL MODAL *//* Se asignara mediante JS */
+@keyframes modalOut {
+    0% {
+        transform: translateY(5px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+    75% {
+        transform: translateY(25px);
+    }
+    100% {
+        transform: translateY(-2000px);
+    }
+}
+
+/* MEDIA QUERIES DE SECCION MODAL */
+@media screen and (max-width: 768px) {
+    .modal {
+        height: 180px;
+        width: 400px;
+    }
+
+        .modal-titulo {
+            font-size: 1em;
+        }
+        
+        .modal-contenido {
+            font-size: 0.9em;
+        }
+
+        .modal-boton {
+            height: 30px;
+            width: 80px;
+            margin-top: 5px;
+            font-size: 0.8em;
+        }
+}
+
+@media screen and (max-width: 480px) {
+    .modal {
+        height: 150px;
+        width: 300px;
+    }
+
+        .modal-titulo {
+            font-size: 0.9em;
+        }
+        
+        .modal-contenido {
+            font-size: 0.7em;
+        }
+
+        .modal-boton {
+            height: 25px;
+            width: 70px;
+            margin-top: 0;
+            font-size: 0.7em;
+        }
+}
+/* MEDIA QUERIES DE SECCION MODAL */
